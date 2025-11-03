@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #232526, #414345);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.coin {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.coin button {
+  padding: 40px 40px;
+  border: none;
+  border-radius: 50%;
+  background-image: url("assets/coin.png");
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.coin button:hover {
+  transform: scale(1.05);
+}
+
+.coin button:active {
+  transform: scale(0.95);
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+
+.upgrades {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 25px;
+  overflow-y: scroll;
+  max-height: 150px;
+  clip-path: inset(0 round 15px);
+}
+
+.upgrades button {
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+  display:flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.upgrades button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #ffcc33, #ffe259);
+}
+
+.rebirth {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rebirth-button {
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.rebirth-button:hover {
+  transform: translateY(-3px);
+}
+
+.additional {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 25px;
+}
+
+.additional button {
+  background: linear-gradient(90deg, #8e2de2, #4a00e0);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.additional button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(142, 45, 226, 0.5);
+}
+
+.additional button:disabled {
+  background: #444;
+  cursor: not-allowed;
+}
+
+.sub-text {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  margin-bottom: 0.2rem;
+  background-color: transparent;
+}
