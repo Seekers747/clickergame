@@ -1,5 +1,3 @@
-import coinIcon from "./coin.png";
-import multiplierIcon from "./multiplier.webp";
-import rebirthIcon from "./rebirth.webp";
-
-export { coinIcon, multiplierIcon, rebirthIcon };
+export {default as coin } from "./coin.png";
+export {default as multiplier } from "./multiplier.webp";
+export {default as rebirth} from "./rebirth.webp";
