@@ -9,11 +9,12 @@ export type State = {
     rebirthMultiplier: number,
     rebirths: number,
     maxAutoClickerCooldown: boolean,
+    upgradeCostMultiplier: number,
 }
 
 export type Action =
     | { type: 'INCREMENT_COUNT'; amount: number }
-    | { type: 'UPDATE_MULTIPLIER'; cost: number, amount: number }
+    | { type: 'UPDATE_MULTIPLIER'; cost: number, amount: number, upgradeCostMultiplier?: number }
     | { type: 'TOGGLE_AUTO_CLICKER'; cost: number, value: boolean }
     | { type: 'UPDATE_AUTO_CLICKER_COOLDOWN'; cost: number, amount: number }
     | { type: 'UPDATE_REBIRTH_COST'; amount: number }
@@ -32,6 +33,7 @@ export const initialState: State = {
     rebirthMultiplier: 1,
     rebirths: 0,
     maxAutoClickerCooldown: false,
+    upgradeCostMultiplier: 1,
 }
 
 export function reducer(state: State, action: Action): State {
@@ -39,7 +41,7 @@ switch (action.type) {
     case 'INCREMENT_COUNT':
     return { ...state, count: state.count + action.amount }
     case 'UPDATE_MULTIPLIER':
-    return { ...state, count: state.count - action.cost, multiplier: action.amount }
+    return { ...state, count: state.count - action.cost, multiplier: action.amount, upgradeCostMultiplier: action.upgradeCostMultiplier ?? state.upgradeCostMultiplier }
     case 'TOGGLE_AUTO_CLICKER':
     return { ...state, count: state.count - action.cost, boughtAutoClicker: action.value }
     case 'UPDATE_AUTO_CLICKER_COOLDOWN':

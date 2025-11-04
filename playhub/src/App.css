@@ -168,3 +168,18 @@ img {
   margin-bottom: 0.2rem;
   background-color: transparent;
 }
+
+.audio-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.audio-container button {
+  margin: 2px;
+}

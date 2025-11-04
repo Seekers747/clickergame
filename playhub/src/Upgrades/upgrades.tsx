@@ -1,4 +1,3 @@
-// upgrades.ts
 export interface Upgrade {
   cost: number;
   add: number;

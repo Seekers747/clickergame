@@ -1,8 +1,17 @@
-export function upgradeButton(state: any, dispatch: any, cost: number, addMultiplier: number) {
-    cost *= state.multiplier
-    if (state.count >= cost) {
+import { roundNumber } from './utils'
+
+export function upgradeButton(state: any, dispatch: any, baseCost: number, addMultiplier: number) {
+    const actualCost = roundNumber(baseCost * state.upgradeCostMultiplier)
+
+    if (state.count >= actualCost) {
         const newMultiplier = state.multiplier + addMultiplier
-        dispatch({ type: 'UPDATE_MULTIPLIER', cost, amount: newMultiplier })
+        const newUpgradeCostMultiplier = roundNumber(state.upgradeCostMultiplier * 1.15)
+        dispatch({ 
+            type: 'UPDATE_MULTIPLIER', 
+            cost: actualCost, 
+            amount: newMultiplier, 
+            upgradeCostMultiplier: newUpgradeCostMultiplier 
+        })
     }
 }
 

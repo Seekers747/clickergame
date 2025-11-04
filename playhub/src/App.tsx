@@ -9,7 +9,6 @@ export default function App() {
     upgrades, UpgradeClickButton: UpgradeClickButton,
   } = imports
 
-
   const [state, dispatch] = reactUseReducer(gameReducer, gameInitialState)
   const actions = bindActions(gameActionsAndButtons, state, dispatch);
   const actionsRef = reactUseRef(actions);
@@ -28,8 +27,39 @@ export default function App() {
     return () => clearInterval(id);
   }, [state.boughtAutoClicker, state.autoClickerCooldown]);
 
+  function MusicPlayer() {
+    const audioRef = reactUseRef<HTMLAudioElement>(null);
+
+    const handlePlay = () => {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.play()
+      }
+    };
+
+    const handlePause = () => {
+      if (audioRef.current) audioRef.current.pause();
+    }
+
+    return (
+      <>
+        <div className="audio-container">
+          <div className='sub-text'>Music</div>
+          <div className="audio-player">
+            <audio ref={audioRef} src="https://dn721901.ca.archive.org/0/items/05-underground/01%20Overworld%20Day.mp3" />
+            <button onClick={handlePlay}>Play Music</button>
+          </div>
+          <div className='audio-pause'>
+            <button onClick={handlePause}>Pause Music</button>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
+      <MusicPlayer/>
       <div className="coin">
         <button
           onClick={() =>

@@ -1,7 +1,6 @@
 import { useReducer, useEffect, useRef } from 'react';
 import '../App.css';
 import { reducer, initialState } from './init';
-
 import { formatNumber } from './utils';
 import * as actions from './actions';
 import { bindActions } from './bind';
@@ -20,7 +19,7 @@ const imports = {
   bindActions,
   actions,
   upgrades,
-  UpgradeClickButton,
+  UpgradeClickButton
 };
 
 export default imports;
