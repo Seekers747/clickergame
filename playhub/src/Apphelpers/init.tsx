@@ -72,6 +72,7 @@ switch (action.type) {
         boughtAutoClicker: false,
         autoClickerCooldown: 1000,
         maxAutoClickerCooldown: false,
+        upgradeCostMultiplier: 1
     }
     default:
     return state
