@@ -7,6 +7,7 @@ import { bindActions } from './bind';
 import * as icons from "../assets";
 import { upgrades } from '../Upgrades/upgrades';
 import UpgradeClickButton from '../Upgrades/UpgradeClickButton';
+import MusicPlayer from './music';
 
 const imports = {
   useReducer,
@@ -19,7 +20,8 @@ const imports = {
   bindActions,
   actions,
   upgrades,
-  UpgradeClickButton
+  UpgradeClickButton,
+  MusicPlayer,
 };
 
 export default imports;
